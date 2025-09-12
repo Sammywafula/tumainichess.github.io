@@ -6,8 +6,7 @@
 <title>Tumaini Chess Academy</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-  /* Background with overlay */
+  /* Background with darker overlay and more visible image */
   body {
     margin: 0;
     padding: 0;
@@ -22,10 +21,9 @@
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(10, 10, 22, 0.7);
+    background: rgba(5, 5, 12, 0.55); /* stronger but still transparent overlay */
     z-index: -1;
   }
-  /* Container style for main and sections to provide contrast */
   main {
     max-width: 960px;
     margin: 2rem auto;
@@ -41,10 +39,10 @@
   header {
     background: linear-gradient(135deg, #4a90e2cc, #9013fecc);
     color: white;
-    padding: 1.2rem 2rem;
+    padding: 1.8rem 3rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     flex-wrap: wrap;
     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     position: sticky;
@@ -52,30 +50,41 @@
     z-index: 10;
   }
   header img.logo {
-    height: 60px;
+    height: 100px; /* bigger logo */
     border-radius: 12px;
-    box-shadow: 0 0 8px #9013feaa;
+    box-shadow: 0 0 15px #9013fecc;
+    transition: transform 0.3s ease;
+  }
+  header img.logo:hover {
+    transform: scale(1.05);
   }
   header h1 {
-    font-weight: 700;
-    font-size: 2rem;
+    font-weight: 900;
+    font-size: 3.8rem; /* significantly bigger title */
     margin: 0;
-    text-shadow: 1px 1px 6px #000000cc;
+    text-shadow:
+      0 0 10px #d9a4ff,
+      0 0 20px #e8beff,
+      0 0 30px #9013fe,
+      0 0 45px #9013fe,
+      0 0 60px #a370ff;
+    letter-spacing: 3px;
+    user-select: none;
   }
   /* Navigation */
   nav {
     background: rgba(255 255 255 / 0.9);
-    padding: 0.6rem 2rem;
+    padding: 0.8rem 2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     position: sticky;
-    top: 72px;
+    top: 126px; /* account for bigger header */
     z-index: 9;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 20px 20px;
   }
   nav ul {
     list-style: none;
     display: flex;
-    gap: 1.8rem;
+    gap: 2rem;
     margin: 0; padding: 0;
     flex-wrap: wrap;
     justify-content: center;
@@ -84,16 +93,16 @@
     text-decoration: none;
     font-weight: 700;
     color: #444;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
     transition: all 0.3s ease;
   }
   nav a:hover, nav a:focus {
     background: #9013fe;
     color: white;
-    box-shadow: 0 0 8px #9013fe;
+    box-shadow: 0 0 10px #9013fe;
   }
-  /* Section headings */
+  /* Section titles */
   h2 {
     font-weight: 700;
     color: #e0b4ff;
@@ -101,15 +110,16 @@
     border-bottom: 3px solid #9013fe;
     display: inline-block;
     padding-bottom: 0.3rem;
-    text-shadow: 0 0 10px #9013feaa;
+    text-shadow: 0 0 12px #957ee0;
   }
+  /* Text styling */
   p, li {
     max-width: 700px;
-    color: #ddd;
-    font-size: 1.05rem;
+    color: #e0dffa;
+    font-size: 1.1rem;
   }
   ul {
-    padding-left: 1.3rem;
+    padding-left: 1.4rem;
     max-width: 700px;
   }
   /* Cards style */
@@ -119,138 +129,142 @@
     gap: 2rem;
   }
   .charity-box, .coach-card, .gallery-item {
-    background: rgba(255 255 255 / 0.15);
-    border-radius: 12px;
-    box-shadow: 0 0 15px #9013feaa;
-    padding: 1.2rem;
-    flex: 1 1 280px;
-    color: #f5f2ff;
+    background: rgba(255 255 255 / 0.18);
+    border-radius: 14px;
+    box-shadow: 0 0 20px #9b6dffcc;
+    padding: 1.4rem;
+    flex: 1 1 300px;
+    color: #f7f5ff;
     transition: background-color 0.3s ease;
   }
   .charity-box:hover, .coach-card:hover, .gallery-item:hover {
-    background: rgba(255 255 255 / 0.35);
+    background: rgba(255 255 255 / 0.38);
   }
   .charity-box h3, .coach-card h3 {
     margin-top: 0;
-    color: #a987ff;
+    color: #b9a6ff;
   }
   .coach-photo {
     width: 100%;
-    height: 220px;
+    height: 230px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 0.8rem;
-    box-shadow: 0 0 12px #9013fecc;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 18px #a77affbb;
   }
   .founder-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.3rem;
     align-items: center;
-    background: rgba(255 255 255 / 0.2);
-    padding: 1.2rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 25px #9013feaa inset;
+    background: rgba(255 255 255 / 0.22);
+    padding: 1.5rem 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 0 35px #b68cffbb inset;
   }
   .founder-photo {
-    width: 180px;
-    height: 240px;
+    width: 200px;
+    height: 260px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
     flex-shrink: 0;
-    box-shadow: 0 0 15px #d991ff;
+    box-shadow: 0 0 18px #cc9eff;
   }
   .founder-info {
     flex: 1;
-    color: #eed9ff;
+    color: #f3e9ff;
   }
   .tournament-card {
-    background: rgba(255 255 255 / 0.25);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px #8a3bff7a;
-    padding: 1.5rem;
+    background: rgba(255 255 255 / 0.30);
+    border-radius: 14px;
+    box-shadow: 0 10px 35px #a068f7cc;
+    padding: 1.8rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.4rem;
     align-items: center;
-    color: #efeefe;
+    color: #f2efff;
     transition: box-shadow 0.3s ease;
   }
   .tournament-card:hover {
-    box-shadow: 0 12px 40px #d38cffcc;
+    box-shadow: 0 18px 50px #ce9effdd;
   }
   .tournament-details {
-    flex: 2 1 320px;
+    flex: 2 1 350px;
   }
   .tournament-poster {
-    flex: 1 1 200px;
-    max-width: 200px;
-    border-radius: 12px;
+    flex: 1 1 240px;
+    max-width: 240px;
+    border-radius: 14px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 18px #d38cffcc;
+    box-shadow: 0 0 22px #ce9effcc;
   }
   .tournament-poster:hover {
-    transform: scale(1.06);
-    box-shadow: 0 0 28px #f8bbffdd;
+    transform: scale(1.08);
+    box-shadow: 0 0 36px #ffc1ffdd;
   }
   .register-link {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.6rem 1rem;
-    background: #c28dff;
-    color: #3a005f;
+    margin-top: 1.2rem;
+    padding: 0.8rem 1.4rem;
+    background: #cf9efe;
+    color: #3e0061;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
     transition: background 0.3s ease, color 0.3s ease;
     cursor: pointer;
   }
   .register-link:hover {
-    background: #a46dfd;
-    color: #f9e1ff;
+    background: #aa79ff;
+    color: #faf1ff;
   }
   .gallery-grid img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 14px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 20px #ac7affaa;
+    box-shadow: 0 0 26px #bd89ffc9;
   }
   .gallery-grid img:hover {
-    transform: scale(1.07);
-    box-shadow: 0 0 28px #e0b3ffdd;
+    transform: scale(1.09);
+    box-shadow: 0 0 38px #f4c9ffdd;
   }
   footer {
-    background: #23004d;
-    color: #d6c7ff;
+    background: #1a004c;
+    color: #e5d5ff;
     text-align: center;
-    padding: 1rem 1rem;
-    font-size: 0.9rem;
-    box-shadow: 0 -3px 15px #7e3fffcc inset;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    box-shadow: 0 -4px 14px #8a4dfacc inset;
+    user-select: none;
   }
-  /* Responsive */
-  @media (max-width: 600px) {
-    .founder-section {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  /* Responsive adjustments */
+  @media (max-width: 700px) {
     header {
-      flex-direction: column;
-      align-items: flex-start;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+    }
+    nav {
+      top: 110px;
+    }
+  }
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    header img.logo {
+      height: 80px;
     }
     nav ul {
-      flex-direction: column; 
-      gap: 0.9rem;
-      justify-content: flex-start;
-    }
-    .tournament-card {
+      gap: 1rem;
       flex-direction: column;
-      align-items: flex-start;
-    }
-    .tournament-poster {
-      max-width: 100%;
-      flex: none;
+      padding: 0;
     }
   }
 </style>
