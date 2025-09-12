@@ -6,7 +6,6 @@
 <title>Tumaini Chess Academy</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-  /* Background with darker overlay and more visible image */
   body {
     margin: 0;
     padding: 0;
@@ -14,45 +13,32 @@
     background: url('https://res.cloudinary.com/dfmpym7ed/image/upload/v1757699848/Gemini_Generated_Image_i8gegri8gegri8ge_sv510r.png') no-repeat center center fixed;
     background-size: cover;
     color: #f0f0f5;
-    line-height: 1.6;
+    line-height: 1.75;
     position: relative;
   }
   body::before {
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(5, 5, 12, 0.55); /* stronger but still transparent overlay */
+    background: rgba(5, 5, 12, 0.45);
     z-index: -1;
   }
-  main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    background: rgba(20, 20, 48, 0.8);
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(144, 19, 254, 0.5);
-  }
-  section {
-    margin-bottom: 3rem;
-  }
-  /* Header */
+  /* Header with logo centered and stacked */
   header {
     background: linear-gradient(135deg, #4a90e2cc, #9013fecc);
     color: white;
-    padding: 1.8rem 3rem;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    padding: 2rem 2rem 1rem;
+    text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     position: sticky;
     top: 0;
     z-index: 10;
   }
   header img.logo {
-    height: 100px; /* bigger logo */
-    border-radius: 12px;
-    box-shadow: 0 0 15px #9013fecc;
+    height: 160px; /* big logo */
+    border-radius: 16px;
+    box-shadow: 0 0 25px #9013fecc;
+    margin-bottom: 1rem;
     transition: transform 0.3s ease;
   }
   header img.logo:hover {
@@ -60,31 +46,31 @@
   }
   header h1 {
     font-weight: 900;
-    font-size: 3.8rem; /* significantly bigger title */
+    font-size: 4.5rem; /* bigger than before */
     margin: 0;
     text-shadow:
-      0 0 10px #d9a4ff,
-      0 0 20px #e8beff,
-      0 0 30px #9013fe,
+      0 0 15px #d9a4ff,
+      0 0 30px #e8beff,
       0 0 45px #9013fe,
-      0 0 60px #a370ff;
-    letter-spacing: 3px;
+      0 0 60px #9013fe,
+      0 0 75px #a370ff;
+    letter-spacing: 3.5px;
     user-select: none;
   }
   /* Navigation */
   nav {
-    background: rgba(255 255 255 / 0.9);
-    padding: 0.8rem 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    background: rgba(255 255 255 / 0.92);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     position: sticky;
-    top: 126px; /* account for bigger header */
+    top: 250px;
     z-index: 9;
     border-radius: 0 0 20px 20px;
   }
   nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2.2rem;
     margin: 0; padding: 0;
     flex-wrap: wrap;
     justify-content: center;
@@ -92,127 +78,133 @@
   nav a {
     text-decoration: none;
     font-weight: 700;
+    font-size: 1.2rem;
     color: #444;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
+    padding: 0.5rem 1.2rem;
+    border-radius: 12px;
     transition: all 0.3s ease;
   }
   nav a:hover, nav a:focus {
     background: #9013fe;
     color: white;
-    box-shadow: 0 0 10px #9013fe;
+    box-shadow: 0 0 12px #9013fe;
   }
-  /* Section titles */
+  /* Section Titles */
   h2 {
     font-weight: 700;
     color: #e0b4ff;
-    margin-bottom: 1.2rem;
-    border-bottom: 3px solid #9013fe;
+    font-size: 2.8rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 4px solid #9013fe;
     display: inline-block;
-    padding-bottom: 0.3rem;
-    text-shadow: 0 0 12px #957ee0;
+    padding-bottom: 0.4rem;
+    text-shadow: 0 0 14px #957ee0;
   }
-  /* Text styling */
+  /* Text */
   p, li {
     max-width: 700px;
     color: #e0dffa;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
   ul {
-    padding-left: 1.4rem;
+    padding-left: 1.6rem;
     max-width: 700px;
   }
-  /* Cards style */
+  /* Card styles */
   .charity-items, .coaches-list, .gallery-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2.6rem;
   }
   .charity-box, .coach-card, .gallery-item {
-    background: rgba(255 255 255 / 0.18);
-    border-radius: 14px;
-    box-shadow: 0 0 20px #9b6dffcc;
-    padding: 1.4rem;
+    background: rgba(255 255 255 / 0.20);
+    border-radius: 16px;
+    box-shadow: 0 0 26px #9b6dffcc;
+    padding: 1.8rem;
     flex: 1 1 300px;
     color: #f7f5ff;
     transition: background-color 0.3s ease;
   }
   .charity-box:hover, .coach-card:hover, .gallery-item:hover {
-    background: rgba(255 255 255 / 0.38);
+    background: rgba(255 255 255 / 0.45);
   }
   .charity-box h3, .coach-card h3 {
     margin-top: 0;
+    font-size: 1.9rem;
     color: #b9a6ff;
   }
   .coach-photo {
     width: 100%;
-    height: 230px;
+    height: 260px;
     object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 18px #a77affbb;
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 0 22px #a77affbb;
   }
   .founder-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.3rem;
+    gap: 1.6rem;
     align-items: center;
-    background: rgba(255 255 255 / 0.22);
-    padding: 1.5rem 2.5rem;
-    border-radius: 14px;
-    box-shadow: 0 0 35px #b68cffbb inset;
+    background: rgba(255 255 255 / 0.28);
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 0 40px #b68cffbb inset;
   }
   .founder-photo {
-    width: 200px;
-    height: 260px;
+    width: 220px;
+    height: 280px;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 16px;
     flex-shrink: 0;
-    box-shadow: 0 0 18px #cc9eff;
+    box-shadow: 0 0 24px #cc9eff;
   }
   .founder-info {
     flex: 1;
     color: #f3e9ff;
+    font-size: 1.3rem;
   }
   .tournament-card {
-    background: rgba(255 255 255 / 0.30);
-    border-radius: 14px;
-    box-shadow: 0 10px 35px #a068f7cc;
-    padding: 1.8rem;
+    background: rgba(255 255 255 / 0.36);
+    border-radius: 16px;
+    box-shadow: 0 12px 45px #a068f7cc;
+    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.4rem;
+    gap: 1.8rem;
     align-items: center;
     color: #f2efff;
     transition: box-shadow 0.3s ease;
   }
   .tournament-card:hover {
-    box-shadow: 0 18px 50px #ce9effdd;
+    box-shadow: 0 20px 56px #ce9effdd;
   }
   .tournament-details {
-    flex: 2 1 350px;
+    flex: 2 1 380px;
+    font-size: 1.3rem;
   }
   .tournament-poster {
-    flex: 1 1 240px;
-    max-width: 240px;
-    border-radius: 14px;
+    flex: 1 1 250px;
+    max-width: 250px;
+    border-radius: 16px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 22px #ce9effcc;
+    box-shadow: 0 0 28px #ce9effcc;
   }
   .tournament-poster:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 36px #ffc1ffdd;
+    transform: scale(1.1);
+    box-shadow: 0 0 44px #ffc1ffdd;
   }
   .register-link {
     display: inline-block;
-    margin-top: 1.2rem;
-    padding: 0.8rem 1.4rem;
+    margin-top: 1.6rem;
+    padding: 1rem 2rem;
     background: #cf9efe;
     color: #3e0061;
     font-weight: 700;
+    font-size: 1.3rem;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: background 0.3s ease, color 0.3s ease;
     cursor: pointer;
   }
@@ -222,48 +214,48 @@
   }
   .gallery-grid img {
     width: 100%;
-    border-radius: 14px;
+    border-radius: 16px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 26px #bd89ffc9;
+    box-shadow: 0 0 32px #bd89ffc9;
   }
   .gallery-grid img:hover {
-    transform: scale(1.09);
-    box-shadow: 0 0 38px #f4c9ffdd;
+    transform: scale(1.12);
+    box-shadow: 0 0 44px #f4c9ffdd;
   }
   footer {
     background: #1a004c;
     color: #e5d5ff;
     text-align: center;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    box-shadow: 0 -4px 14px #8a4dfacc inset;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    box-shadow: 0 -5px 18px #8a4dfacc inset;
     user-select: none;
   }
   /* Responsive adjustments */
-  @media (max-width: 700px) {
-    header {
-      justify-content: center;
-      gap: 1rem;
-      text-align: center;
+  @media (max-width: 900px) {
+    nav ul {
+      gap: 1.2rem;
     }
     header h1 {
-      font-size: 2.8rem;
-    }
-    nav {
-      top: 110px;
-    }
-  }
-  @media (max-width: 480px) {
-    header h1 {
-      font-size: 2rem;
+      font-size: 3rem;
     }
     header img.logo {
-      height: 80px;
+      height: 130px;
+      margin-bottom: 0.8rem;
+    }
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+    header img.logo {
+      height: 100px;
+      margin-bottom: 0.6rem;
     }
     nav ul {
-      gap: 1rem;
       flex-direction: column;
+      gap: 1rem;
       padding: 0;
     }
   }
