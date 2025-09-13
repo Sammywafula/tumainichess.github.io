@@ -6,6 +6,8 @@
 <title>Tumaini Chess Academy</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  /* Background with overlay */
   body {
     margin: 0;
     padding: 0;
@@ -13,64 +15,67 @@
     background: url('https://res.cloudinary.com/dfmpym7ed/image/upload/v1757699848/Gemini_Generated_Image_i8gegri8gegri8ge_sv510r.png') no-repeat center center fixed;
     background-size: cover;
     color: #f0f0f5;
-    line-height: 1.75;
+    line-height: 1.6;
     position: relative;
   }
   body::before {
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(5, 5, 12, 0.45);
+    background: rgba(10, 10, 22, 0.7);
     z-index: -1;
   }
-  /* Header with logo centered and stacked */
+  /* Container style for main and sections to provide contrast */
+  main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    background: rgba(20, 20, 48, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(144, 19, 254, 0.5);
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  /* Header */
   header {
     background: linear-gradient(135deg, #4a90e2cc, #9013fecc);
     color: white;
-    padding: 2rem 2rem 1rem;
-    text-align: center;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     position: sticky;
     top: 0;
     z-index: 10;
   }
   header img.logo {
-    height: 160px; /* big logo */
-    border-radius: 16px;
-    box-shadow: 0 0 25px #9013fecc;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-  }
-  header img.logo:hover {
-    transform: scale(1.05);
+    height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #9013feaa;
   }
   header h1 {
-    font-weight: 900;
-    font-size: 4.5rem; /* bigger than before */
+    font-weight: 700;
+    font-size: 2rem;
     margin: 0;
-    text-shadow:
-      0 0 15px #d9a4ff,
-      0 0 30px #e8beff,
-      0 0 45px #9013fe,
-      0 0 60px #9013fe,
-      0 0 75px #a370ff;
-    letter-spacing: 3.5px;
-    user-select: none;
+    text-shadow: 1px 1px 6px #000000cc;
   }
   /* Navigation */
   nav {
-    background: rgba(255 255 255 / 0.92);
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    background: rgba(255 255 255 / 0.9);
+    padding: 0.6rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     position: sticky;
-    top: 250px;
+    top: 72px;
     z-index: 9;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 15px 15px;
   }
   nav ul {
     list-style: none;
     display: flex;
-    gap: 2.2rem;
+    gap: 1.8rem;
     margin: 0; padding: 0;
     flex-wrap: wrap;
     justify-content: center;
@@ -78,185 +83,174 @@
   nav a {
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.2rem;
     color: #444;
-    padding: 0.5rem 1.2rem;
-    border-radius: 12px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
   }
   nav a:hover, nav a:focus {
     background: #9013fe;
     color: white;
-    box-shadow: 0 0 12px #9013fe;
+    box-shadow: 0 0 8px #9013fe;
   }
-  /* Section Titles */
+  /* Section headings */
   h2 {
     font-weight: 700;
     color: #e0b4ff;
-    font-size: 2.8rem;
-    margin-bottom: 1.6rem;
-    border-bottom: 4px solid #9013fe;
+    margin-bottom: 1.2rem;
+    border-bottom: 3px solid #9013fe;
     display: inline-block;
-    padding-bottom: 0.4rem;
-    text-shadow: 0 0 14px #957ee0;
+    padding-bottom: 0.3rem;
+    text-shadow: 0 0 10px #9013feaa;
   }
-  /* Text */
   p, li {
     max-width: 700px;
-    color: #e0dffa;
-    font-size: 1.25rem;
+    color: #ddd;
+    font-size: 1.05rem;
   }
   ul {
-    padding-left: 1.6rem;
+    padding-left: 1.3rem;
     max-width: 700px;
   }
-  /* Card styles */
+  /* Cards style */
   .charity-items, .coaches-list, .gallery-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.6rem;
+    gap: 2rem;
   }
   .charity-box, .coach-card, .gallery-item {
-    background: rgba(255 255 255 / 0.20);
-    border-radius: 16px;
-    box-shadow: 0 0 26px #9b6dffcc;
-    padding: 1.8rem;
-    flex: 1 1 300px;
-    color: #f7f5ff;
+    background: rgba(255 255 255 / 0.15);
+    border-radius: 12px;
+    box-shadow: 0 0 15px #9013feaa;
+    padding: 1.2rem;
+    flex: 1 1 280px;
+    color: #f5f2ff;
     transition: background-color 0.3s ease;
   }
   .charity-box:hover, .coach-card:hover, .gallery-item:hover {
-    background: rgba(255 255 255 / 0.45);
+    background: rgba(255 255 255 / 0.35);
   }
   .charity-box h3, .coach-card h3 {
     margin-top: 0;
-    font-size: 1.9rem;
-    color: #b9a6ff;
+    color: #a987ff;
   }
   .coach-photo {
     width: 100%;
-    height: 260px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 16px;
-    margin-bottom: 1.2rem;
-    box-shadow: 0 0 22px #a77affbb;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 0 12px #9013fecc;
   }
   .founder-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.6rem;
+    gap: 1rem;
     align-items: center;
-    background: rgba(255 255 255 / 0.28);
-    padding: 2rem 3rem;
-    border-radius: 16px;
-    box-shadow: 0 0 40px #b68cffbb inset;
+    background: rgba(255 255 255 / 0.2);
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 25px #9013feaa inset;
   }
   .founder-photo {
-    width: 220px;
-    height: 280px;
+    width: 180px;
+    height: 240px;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: 12px;
     flex-shrink: 0;
-    box-shadow: 0 0 24px #cc9eff;
+    box-shadow: 0 0 15px #d991ff;
   }
   .founder-info {
     flex: 1;
-    color: #f3e9ff;
-    font-size: 1.3rem;
+    color: #eed9ff;
   }
   .tournament-card {
-    background: rgba(255 255 255 / 0.36);
-    border-radius: 16px;
-    box-shadow: 0 12px 45px #a068f7cc;
-    padding: 2rem;
+    background: rgba(255 255 255 / 0.25);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px #8a3bff7a;
+    padding: 1.5rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.8rem;
+    gap: 1rem;
     align-items: center;
-    color: #f2efff;
+    color: #efeefe;
     transition: box-shadow 0.3s ease;
   }
   .tournament-card:hover {
-    box-shadow: 0 20px 56px #ce9effdd;
+    box-shadow: 0 12px 40px #d38cffcc;
   }
   .tournament-details {
-    flex: 2 1 380px;
-    font-size: 1.3rem;
+    flex: 2 1 320px;
   }
   .tournament-poster {
-    flex: 1 1 250px;
-    max-width: 250px;
-    border-radius: 16px;
+    flex: 1 1 200px;
+    max-width: 200px;
+    border-radius: 12px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 28px #ce9effcc;
+    box-shadow: 0 0 18px #d38cffcc;
   }
   .tournament-poster:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 44px #ffc1ffdd;
+    transform: scale(1.06);
+    box-shadow: 0 0 28px #f8bbffdd;
   }
   .register-link {
     display: inline-block;
-    margin-top: 1.6rem;
-    padding: 1rem 2rem;
-    background: #cf9efe;
-    color: #3e0061;
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background: #c28dff;
+    color: #3a005f;
     font-weight: 700;
-    font-size: 1.3rem;
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: 8px;
     transition: background 0.3s ease, color 0.3s ease;
     cursor: pointer;
   }
   .register-link:hover {
-    background: #aa79ff;
-    color: #faf1ff;
+    background: #a46dfd;
+    color: #f9e1ff;
   }
   .gallery-grid img {
     width: 100%;
-    border-radius: 16px;
+    border-radius: 12px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 32px #bd89ffc9;
+    box-shadow: 0 0 20px #ac7affaa;
   }
   .gallery-grid img:hover {
-    transform: scale(1.12);
-    box-shadow: 0 0 44px #f4c9ffdd;
+    transform: scale(1.07);
+    box-shadow: 0 0 28px #e0b3ffdd;
   }
   footer {
-    background: #1a004c;
-    color: #e5d5ff;
+    background: #23004d;
+    color: #d6c7ff;
     text-align: center;
-    padding: 1.2rem 2rem;
-    font-size: 1.1rem;
-    box-shadow: 0 -5px 18px #8a4dfacc inset;
-    user-select: none;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 -3px 15px #7e3fffcc inset;
   }
-  /* Responsive adjustments */
-  @media (max-width: 900px) {
-    nav ul {
-      gap: 1.2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-    }
-    header img.logo {
-      height: 130px;
-      margin-bottom: 0.8rem;
-    }
-  }
+  /* Responsive */
   @media (max-width: 600px) {
-    header h1 {
-      font-size: 2.2rem;
+    .founder-section {
+      flex-direction: column;
+      align-items: flex-start;
     }
-    header img.logo {
-      height: 100px;
-      margin-bottom: 0.6rem;
+    header {
+      flex-direction: column;
+      align-items: flex-start;
     }
     nav ul {
+      flex-direction: column; 
+      gap: 0.9rem;
+      justify-content: flex-start;
+    }
+    .tournament-card {
       flex-direction: column;
-      gap: 1rem;
-      padding: 0;
+      align-items: flex-start;
+    }
+    .tournament-poster {
+      max-width: 100%;
+      flex: none;
     }
   }
 </style>
