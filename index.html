@@ -7,65 +7,54 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
   body {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     font-family: 'Poppins', sans-serif;
     background: url('https://res.cloudinary.com/dfmpym7ed/image/upload/v1757699848/Gemini_Generated_Image_i8gegri8gegri8ge_sv510r.png') no-repeat center center fixed;
     background-size: cover;
-    color: #f0f0f5;
+    color: #111;
     line-height: 1.6;
-    position: relative;
   }
   body::before {
     content: "";
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(10, 10, 22, 0.7);
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(10,10,22,0.4);
     z-index: -1;
   }
-  main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    background: rgba(20, 20, 48, 0.85);
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(144, 19, 254, 0.5);
-  }
-  section {
-    margin-bottom: 3rem;
-  }
-  /* Header */
   header {
     background: linear-gradient(135deg, #4a90e2cc, #9013fecc);
     color: white;
     padding: 1.2rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     position: sticky;
     top: 0;
     z-index: 10;
   }
   header img.logo {
-    height: 60px;
+    height: 100px;
     border-radius: 12px;
-    box-shadow: 0 0 8px #9013feaa;
+    box-shadow: 0 0 15px #9013fecc;
+    margin-bottom: 0.8rem;
   }
   header h1 {
-    font-weight: 700;
-    font-size: 2rem;
+    font-weight: 900;
+    font-size: 3.8rem;
     margin: 0;
-    text-shadow: 1px 1px 6px #000000cc;
+    text-shadow:
+      0 0 12px #d9a4ff,
+      0 0 24px #e8beff,
+      0 0 36px #9013fe,
+      0 0 48px #9013fe;
+    letter-spacing: 3.5px;
+    user-select: none;
   }
-  /* Navigation */
   nav {
     background: rgba(255 255 255 / 0.9);
-    padding: 0.6rem 2rem;
+    padding: 0.8rem 2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     position: sticky;
-    top: 72px;
+    top: 145px;
     z-index: 9;
     border-radius: 0 0 15px 15px;
   }
@@ -81,149 +70,153 @@
     text-decoration: none;
     font-weight: 700;
     color: #444;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
   }
   nav a:hover, nav a:focus {
     background: #9013fe;
     color: white;
-    box-shadow: 0 0 8px #9013fe;
+    box-shadow: 0 0 12px #9013fe;
   }
-  /* Section headings */
+  main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  section {
+    background: white;
+    margin-bottom: 2.5rem;
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(144, 19, 254, 0.5);
+    color: #222;
+  }
   h2 {
     font-weight: 700;
-    color: #e0b4ff;
-    margin-bottom: 1.2rem;
-    border-bottom: 3px solid #9013fe;
+    color: #6a39c7;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 4px solid #9013fe;
     display: inline-block;
     padding-bottom: 0.3rem;
-    text-shadow: 0 0 10px #9013feaa;
   }
   p, li {
     max-width: 700px;
-    color: #ddd;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
   ul {
-    padding-left: 1.3rem;
+    padding-left: 1.6rem;
     max-width: 700px;
   }
-  /* New card styles */
-  .charity-items, .coaches-list, .gallery-grid, .tournaments-list {
+  .charity-items, .coaches-list, .gallery-grid {
     display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
+    flex-wrap: wrap;
   }
-  .charity-box, .coach-card, .gallery-item, .tournament-card {
-    background: rgba(255 255 255 / 0.15);
-    border-radius: 12px;
-    box-shadow:
-      0 4px 6px rgba(144, 19, 254, 0.3),
-      0 1px 3px rgba(144, 19, 254, 0.1);
-    padding: 1.5rem;
+  .charity-box, .coach-card, .gallery-item {
     flex: 1 1 280px;
-    color: #f5f2ff;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(174, 148, 236, 0.45);
+    padding: 1.2rem;
   }
-  .charity-box:hover, .coach-card:hover, .gallery-item:hover, .tournament-card:hover {
-    background: rgba(255 255 255 / 0.35);
-    box-shadow:
-      0 8px 14px rgba(144, 19, 254, 0.5),
-      0 2px 6px rgba(144, 19, 254, 0.25);
-  }
-  .charity-box h3, .coach-card h3, .tournament-card h3 {
+  .charity-box h3, .coach-card h3 {
+    color: #7d56ff;
     margin-top: 0;
-    color: #a987ff;
+    margin-bottom: 0.5rem;
   }
-  .coach-photo, .gallery-item img, .tournament-poster {
+  .coach-photo, .gallery-item img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 12px #9013fecc;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 16px rgba(144, 19, 254, 0.7);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .coach-photo:hover, .gallery-item img:hover, .tournament-poster:hover {
+  .coach-photo:hover, .gallery-item img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #be9affdd;
+    box-shadow: 0 0 28px rgba(127, 84, 255, 0.9);
   }
   .founder-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
-    background: rgba(255 255 255 / 0.2);
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 25px #9013feaa inset;
   }
   .founder-photo {
+    flex-shrink: 0;
     width: 180px;
     height: 240px;
     object-fit: cover;
-    border-radius: 12px;
-    flex-shrink: 0;
-    box-shadow: 0 0 15px #d991ff;
+    border-radius: 14px;
+    box-shadow: 0 0 28px rgba(174, 148, 236, 0.7);
   }
   .founder-info {
     flex: 1;
-    color: #eed9ff;
   }
   .tournament-card {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
   }
   .tournament-details {
-    flex: 1 1 280px;
-    color: #efeefe;
+    flex: 1 1 300px;
+    font-weight: 600;
+  }
+  .tournament-poster {
+    flex: 1 1 220px;
+    max-width: 220px;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 24px rgba(106 ,57 ,199 , 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .tournament-poster:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 44px rgba(157 ,93 ,254 , 0.9);
   }
   .register-link {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.6rem 1rem;
-    background: #c28dff;
-    color: #3a005f;
+    padding: 0.8rem 1.5rem;
+    background: #7d56ff;
+    color: white;
     font-weight: 700;
+    border-radius: 12px;
     text-decoration: none;
-    border-radius: 8px;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
     cursor: pointer;
   }
   .register-link:hover {
-    background: #a46dfd;
-    color: #f9e1ff;
+    background: #6039d1;
   }
   footer {
-    background: #23004d;
-    color: #d6c7ff;
+    background: #320d89;
+    color: #dcd1ff;
     text-align: center;
-    padding: 1rem 1rem;
-    font-size: 0.9rem;
-    box-shadow: 0 -3px 15px #7e3fffcc inset;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    box-shadow: inset 0 -4px 20px #8155ffcc;
+    user-select: none;
   }
-  /* Responsive */
   @media (max-width: 600px) {
     .founder-section {
       flex-direction: column;
       align-items: flex-start;
     }
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    nav ul {
-      flex-direction: column; 
-      gap: 0.9rem;
-      justify-content: flex-start;
-    }
-    .tournament-card, .charity-items, .coaches-list, .gallery-grid {
+    .charity-items, .coaches-list, .gallery-grid {
       flex-direction: column;
     }
     .tournament-poster, .coach-photo, .gallery-item img {
       max-width: 100%;
       flex: none;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0;
     }
   }
 </style>
@@ -245,89 +238,89 @@
   </ul>
 </nav>
 <main>
-<section id="about">
-  <h2>About Us</h2>
-  <p><strong>Mission:</strong> To nurture and develop young chess talents through expert coaching, community engagement, and promoting chess as a tool for education and character building in schools and homes.</p>
-  <p><strong>Vision:</strong> To be the leading chess academy in Kenya fostering future champions, promoting discipline and strategic thinking through inclusive and accessible chess programs for all children.</p>
-  <div class="founder-section" id="founder">
-    <img src="https://res.cloudinary.com/db8hvm0al/image/upload/v1757775338/Screenshot_20250913-175351_2_tws61g.jpg" alt="Coach James Muchiri" class="founder-photo" />
-    <div class="founder-info">
-      <h3>Coach James Muchiri</h3>
-      <p>Founder of Tumaini Chess Academy, experienced player and certified FIDE Arbiter. Coach James is passionate about developing future chess champions through inspiration and expert guidance.</p>
-    </div>
-  </div>
-</section>
-<section id="programs">
-  <h2>Programs & Services</h2>
-  <p>We offer a variety of chess programs including:</p>
-  <ul>
-    <li><strong>Home Coaching:</strong> Personalized chess coaching sessions conducted at your home for effective learning.</li>
-    <li><strong>Chess in Schools:</strong> Integration of chess training in school programs to foster young talents.</li>
-    <li><strong>Holiday Chess Camps & Weekend Group Sessions:</strong> Engaging chess camps and group activities during school holidays and weekends suitable for all junior levels.</li>
-  </ul>
-</section>
-<section id="tournaments">
-  <h2>Upcoming Tournaments</h2>
-  <div class="charity-items tournaments-list">
-    <div class="tournament-card">
-      <div class="tournament-details">
-        <h3>The Daniel Schools Juniors Chess Tournament</h3>
-        <p><strong>Venue:</strong> Daniel Schools - Syokimau</p>
-        <p><strong>Charges:</strong> Ksh 1000</p>
-        <p><strong>Categories:</strong> Under 7, Under 11, Under 13, Under 15, Under 17</p>
-        <a href="registration.html" class="register-link" target="_blank" rel="noopener noreferrer">Register Here</a>
+  <section id="about" class="card">
+    <h2>About Us</h2>
+    <p><strong>Mission:</strong> To nurture and develop young chess talents through expert coaching, community engagement, and promoting chess as a tool for education and character building in schools and homes.</p>
+    <p><strong>Vision:</strong> To be the leading chess academy in Kenya fostering future champions, promoting discipline and strategic thinking through inclusive and accessible chess programs for all children.</p>
+    <div class="founder-section">
+      <img src="https://res.cloudinary.com/db8hvm0al/image/upload/v1757775338/Screenshot_20250913-175351_2_tws61g.jpg" alt="Coach James Muchiri" class="founder-photo" />
+      <div class="founder-info">
+        <h3>Coach James Muchiri</h3>
+        <p>Founder of Tumaini Chess Academy, experienced player and certified FIDE Arbiter. Coach James is passionate about developing future chess champions through inspiration and expert guidance.</p>
       </div>
-      <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757697442/IMG-20250822-WA0002_nu7u1f.jpg" alt="Daniel Schools Juniors Chess Tournament Poster" class="tournament-poster" onclick="window.open('registration.html', '_blank')" />
     </div>
-  </div>
-</section>
-<section id="charity">
-  <h2>Charitable Works</h2>
-  <div class="charity-items">
-    <div class="charity-box">
-      <h3>Food Donations</h3>
-      <p>We actively engage in food distribution drives to support underprivileged children and families within our community.</p>
+  </section>
+  <section id="programs" class="card">
+    <h2>Programs & Services</h2>
+    <p>We offer a variety of chess programs including:</p>
+    <ul>
+      <li><strong>Home Coaching:</strong> Personalized chess coaching sessions conducted at your home for effective learning.</li>
+      <li><strong>Chess in Schools:</strong> Integration of chess training in school programs to foster young talents.</li>
+      <li><strong>Holiday Chess Camps & Weekend Group Sessions:</strong> Engaging chess camps and group activities during school holidays and weekends suitable for all junior levels.</li>
+    </ul>
+  </section>
+  <section id="tournaments" class="card">
+    <h2>Upcoming Tournaments</h2>
+    <div class="tournaments-list">
+      <div class="tournament-card">
+        <div class="tournament-details">
+          <h3>The Daniel Schools Juniors Chess Tournament</h3>
+          <p><strong>Venue:</strong> Daniel Schools - Syokimau</p>
+          <p><strong>Charges:</strong> Ksh 1000</p>
+          <p><strong>Categories:</strong> Under 7, Under 11, Under 13, Under 15, Under 17</p>
+          <a href="registration.html" class="register-link" target="_blank" rel="noopener noreferrer">Register Here</a>
+        </div>
+        <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757697442/IMG-20250822-WA0002_nu7u1f.jpg" alt="Daniel Schools Juniors Chess Tournament Poster" class="tournament-poster" onclick="window.open('registration.html', '_blank')" />
+      </div>
     </div>
-    <div class="charity-box">
-      <h3>Clothing Donations</h3>
-      <p>Providing clothing essentials to those in need to ensure every child has the dignity and confidence to participate and learn.</p>
+  </section>
+  <section id="charity" class="card">
+    <h2>Charitable Works</h2>
+    <div class="charity-items">
+      <div class="charity-box">
+        <h3>Food Donations</h3>
+        <p>We actively engage in food distribution drives to support underprivileged children and families within our community.</p>
+      </div>
+      <div class="charity-box">
+        <h3>Clothing Donations</h3>
+        <p>Providing clothing essentials to those in need to ensure every child has the dignity and confidence to participate and learn.</p>
+      </div>
     </div>
-  </div>
-</section>
-<section id="coaches">
-  <h2>Our Coaches</h2>
-  <div class="coaches-list">
-    <div class="coach-card">
-      <img src="https://res.cloudinary.com/db8hvm0al/image/upload/v1757775338/Screenshot_20250913-175351_2_tws61g.jpg" alt="Coach James Muchiri" class="coach-photo" />
-      <h3>Coach James Muchiri</h3>
-      <p>Founder and FIDE Arbiter. Experienced player and mentor to young talents.</p>
+  </section>
+  <section id="coaches" class="card">
+    <h2>Our Coaches</h2>
+    <div class="coaches-list">
+      <div class="coach-card">
+        <img src="https://res.cloudinary.com/db8hvm0al/image/upload/v1757775338/Screenshot_20250913-175351_2_tws61g.jpg" alt="Coach James Muchiri" class="coach-photo" />
+        <h3>Coach James Muchiri</h3>
+        <p>Founder and FIDE Arbiter. Experienced player and mentor to young talents.</p>
+      </div>
+      <div class="coach-card">
+        <img src="https://res.cloudinary.com/db8hvm0al/image/upload/v1757773817/IMG-20250913-WA0080_yf1ykv.jpg" alt="Coach Glendah" class="coach-photo" />
+        <h3>Coach Glendah</h3>
+        <p>Committed coach focused on nurturing chess skills for juniors and adults alike.</p>
+      </div>
+      <div class="coach-card">
+        <img src="https://res.cloudinary.com/db8hvm0al/image/upload/v1757775388/IMG-20250913-WA0074_ckygyf.jpg" alt="Coach Zawadi" class="coach-photo" />
+        <h3>Coach Zawadi</h3>
+        <p>Dedicated coach specializing in junior chess development and training.</p>
+      </div>
     </div>
-    <div class="coach-card">
-      <img src="https://res.cloudinary.com/db8hvm0al/image/upload/v1757773817/IMG-20250913-WA0080_yf1ykv.jpg" alt="Coach Glendah" class="coach-photo" />
-      <h3>Coach Glendah</h3>
-      <p>Committed coach focused on nurturing chess skills for juniors and adults alike.</p>
+  </section>
+  <section id="gallery" class="card">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://via.placeholder.com/300x200?text=Chess+Event+1" alt="Chess Event 1" />
+      <img src="https://via.placeholder.com/300x200?text=Chess+Event+2" alt="Chess Event 2" />
+      <img src="https://via.placeholder.com/300x200?text=Chess+Camp" alt="Chess Camp" />
+      <img src="https://via.placeholder.com/300x200?text=Weekend+Session" alt="Weekend Session" />
     </div>
-    <div class="coach-card">
-      <img src="https://res.cloudinary.com/db8hvm0al/image/upload/v1757775388/IMG-20250913-WA0074_ckygyf.jpg" alt="Coach Zawadi" class="coach-photo" />
-      <h3>Coach Zawadi</h3>
-      <p>Dedicated coach specializing in junior chess development and training.</p>
-    </div>
-  </div>
-</section>
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-    <img src="https://via.placeholder.com/300x200?text=Chess+Event+1" alt="Chess Event 1" />
-    <img src="https://via.placeholder.com/300x200?text=Chess+Event+2" alt="Chess Event 2" />
-    <img src="https://via.placeholder.com/300x200?text=Chess+Camp" alt="Chess Camp" />
-    <img src="https://via.placeholder.com/300x200?text=Weekend+Session" alt="Weekend Session" />
-  </div>
-</section>
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Get in touch via email at <a href="mailto:info@tumainichessacademy.co.ke" style="color:#d8b8ff;">info@tumainichessacademy.co.ke</a> or call +254 700 000 000.</p>
-  <p>Follow us on social media for updates and news.</p>
-</section>
+  </section>
+  <section id="contact" class="card">
+    <h2>Contact Us</h2>
+    <p>Get in touch via email at <a href="mailto:info@tumainichessacademy.co.ke" style="color:#6a39c7;">info@tumainichessacademy.co.ke</a> or call +254 700 000 000.</p>
+    <p>Follow us on social media for updates and news.</p>
+  </section>
 </main>
 <footer>
   &copy; 2025 Tumaini Chess Academy. All rights reserved.
